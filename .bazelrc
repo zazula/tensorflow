@@ -183,6 +183,9 @@ build:macos --copt=-DGRPC_BAZEL_BUILD
 
 # Settings for MacOS on ARM CPUs.
 build:macos_arm64 --cpu=darwin_arm64
+build:macos_arm64 --copt=-arch=arm64
+build:macos_arm64 --define=build_with_mkl=false --define=enable_mkl=false
+build:macos_arm64 --distinct_host_configuration=false
 
 # iOS configs for each architecture and the fat binary builds.
 build:ios --apple_platform_type=ios

@@ -51,3 +51,17 @@ def LhloLegalizeToParallelLoopsPass : Pass<"lhlo-legalize-to-parallel-loops", "F
   let constructor = "createLegalizeLhloToParallelLoopsPass()";
 }
 
+def LegalizeTensorLoadOpPass : Pass<"lhlo-legalize-tensor-load-op", "FuncOp"> {
+  let summary = "Legalize tensor load ops that are inserted during mhlo to lmhlo conversion.";
+  let constructor = "createLegalizeTensorLoadOpPass()";
+}
+
+def LhloFusionPass : FunctionPass<"lhlo-fusion"> {
+  let summary = "Fuse lmhlo ops to kLoop/kInput fusion patterns.";
+  let constructor = "createLhloFusionPass()";
+  let options = [
+    Option<"max_num_arguments_per_kernel_", "max-num-arguments-per-kernel", "int",
+           /*default=*/"64", "Maximum allowed number of arguments per fused kernel.">,
+  ];
+}
+

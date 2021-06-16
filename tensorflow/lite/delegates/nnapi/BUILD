@@ -39,6 +39,8 @@ cc_library(
         "//tensorflow/lite/nnapi:nnapi_implementation",
         "//tensorflow/lite/nnapi:nnapi_lib",
         "//tensorflow/lite/nnapi:nnapi_util",
+        "//tensorflow/lite/nnapi/sl:nnapi_support_library_headers",
+        "@FP16",
         "@farmhash_archive//:farmhash",
     ],
 )
@@ -74,7 +76,9 @@ cc_library(
         "//tensorflow/lite/nnapi:nnapi_implementation",
         "//tensorflow/lite/nnapi:nnapi_lib",
         "//tensorflow/lite/nnapi:nnapi_util",
+        "//tensorflow/lite/nnapi/sl:nnapi_support_library_headers",
         "//tensorflow/lite/schema:schema_fbs",
+        "@FP16",
         "@com_google_absl//absl/memory",
         "@com_google_absl//absl/strings",
         "@com_google_absl//absl/types:optional",

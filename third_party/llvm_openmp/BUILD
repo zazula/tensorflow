@@ -69,7 +69,9 @@ omp_vars = {
 
 # Linux Cmake vars to expand.
 omp_vars_linux = {
-    "LIBOMP_USE_VERSION_SYMBOLS": 1,
+    #"LIBOMP_USE_VERSION_SYMBOLS": 1,
+    # rz: not on MacOS
+    "LIBOMP_USE_VERSION_SYMBOLS": 0,
     "LIBOMP_HAVE_WEAK_ATTRIBUTE": 1,
     "LIBOMP_USE_ADAPTIVE_LOCKS": 1,
     "LIBOMP_ENABLE_ASSERTIONS": 1,
